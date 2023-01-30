@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="help-style.css">
+</head>
+<body>
+    <header>
+        <h1>Card Values</h1>
+    </header>
+    <main>
+        <p>
+            In Blackjack, a card's rank is solely determined by its rank; its suit is of no importance.
+            The cards numbered 2-10 have a rank equal to their rank. The Jack, Queen and King all have a rank of 10.
+            Like most card games, the Ace occupies a special position: here, its rank depends on the hand that contains it.
+            Wherever possible, the Ace has a rank equal to 11, the highest rank a single card can have.
+        </p>
+        <figure>
+            <img class="cardImage" src="../images/cards/hearts7.png" alt="Hearts 7">
+            <img class="cardImage" src="../images/cards/spadesA.png" alt="Spades Ace">
+            <figcaption>This hand has a total rank of 18.</figcaption>
+        </figure>
+        <br>
+        <p>
+            Surprisingly, the lowest rank in the game is also attributed to the Ace: should an 11-valued Ace bring a hand's total rank over 21, the Ace's rank becomes 1.
+            Thus, drawing an Ace can never cause a hand's rank to exceed 21.
+        </p>
+        <figure>
+            <img class="cardImage" src="../images/cards/diamonds10.png" alt="Diamonds 10">
+            <img class="cardImage" src="../images/cards/clubs4.png" alt="Clubs 4">
+            <figcaption>This hand has a total rank of 14...</figcaption>
+        </figure>
+        <figure>
+            <img class="cardImage" src="../images/cards/diamonds10.png" alt="Diamonds 10">
+            <img class="cardImage" src="../images/cards/clubs4.png" alt="Clubs 4">
+            <img class="cardImage" src="../images/cards/heartsA.png" alt="Hearts Ace">
+            <figcaption>... After drawing the Ace, the total hand rank becomes 15.</figcaption>
+        </figure>
+        <br>
+        <p>
+            This trait does not only apply to newly drawn Aces, but is applied retroactively as well: when a newly drawn non-Ace card would bring a hand's total rank over 21, if that hand contains an 11-valued ace, that Ace's rank becomes 1.
+        </p>
+        <figure>
+            <img class="cardImage" src="../images/cards/spadesA.png" alt="Spades Ace">
+            <img class="cardImage" src="../images/cards/diamonds6.png" alt="Diamonds 6">
+            <figcaption>This hand has a total rank of 17...</figcaption>
+        </figure>
+        <figure>
+            <img class="cardImage" src="../images/cards/spadesA.png" alt="Spades Ace">
+            <img class="cardImage" src="../images/cards/diamonds6.png" alt="Diamonds 6">
+            <img class="cardImage" src="../images/cards/clubs7.png" alt="Clubs 7">
+            <figcaption>... Since the hand contains an 11-valued Ace, drawing the 7 does not cause the total hand rank to become 24: it becomes 14 instead, because the Ace will now be treated as having a rank of 1.</figcaption>
+        </figure>
+    </main>
+</body>
+</html>

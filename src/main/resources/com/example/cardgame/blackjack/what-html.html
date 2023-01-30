@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="help-style.css">
+</head>
+<body>
+    <header>
+        <h1>What is Blackjack?</h1>
+    </header>
+    <main>
+        <h2>Overview</h2>
+        <p>
+            In the game of Blackjack, the player competes against the dealer. The game consists of rounds, each of which starts by assigning two cards to the player and one card to the dealer. The player's goal is to end the round with a hand that has a total rank exceeding the dealer's total hand rank. For achieving this, the player may draw as many additional cards after the initial cards are dealt. The catch here is that should the player's hand rank exceed 21, the player will lose the round immediately. Thus, depending on the player's pending hand and the dealer's card, the player has to decide whether to draw an additional card or not.
+        </p>
+        <p>
+            After the player has decided to not draw any additional cards, the dealer will resolve its hand. The dealer does so by drawing cards until its hand rank equals 17 or more. Just like the player, the dealer's hand rank can exceed 21. Should this happen, the dealer loses the round, unless both the player's and dealer's hand have exceeded 21, in which case the dealer wins the round. If both the player and dealer end the round with the same hand rank not exceeding 21, the game ends in a draw. Although, there is one exception to this rule...
+        </p>
+        <p>
+            Ties of 21 are judged depending on the cards composing the hands. A two-card hand with a rank of 21 is known as a Blackjack, and will win against any other 21-valued hands that have three or more cards (or any other hands for that matter). In the rare scenario of both the player and the dealer having a Blackjack, the game ends in a draw.
+        </p>
+        <h2>Decisions</h2>
+        <p>
+            During a round, the player is able to make decisions to influence the round outcome and obtain the desired results. A total of five player decisions exist in Blackjack. The following two decisions are always available:
+        </p>
+        <ul>
+            <li><span>Stand: If the player chooses to stand, the round will be concluded by letting the dealer resolve its hand, after which the player's hand will be compared against the dealer's hand.</span></li>
+            <li><span>Hit: If the player chooses to hit, the player will get to draw another card. If this card causes the player's total hand rank to become 21 or more, the round will be concluded automatically.</span></li>
+        </ul>
+        <p>
+            Additionally, three other decisions exist, for which the availability depends on the current state of the game:
+        </p>
+        <ul>
+            <li><span>Surrender: Surrendering is only possible as the player's first decision within a round. If the player chooses to surrender, half of the wager will be recovered, and the round will be ended without play.</span></li>
+            <li><span>Double: Doubling is only possible as the player's first decision within a round. If the player chooses to double, the wager will be multiplied by two for this round, after which the player gets to draw exactly one card - no more, no less - and conclude the round automatically hereafter. As the wager is doubled, so is the payout.</span></li>
+            <li><span>Split: Splitting is only possible if the player's starting hand consists of two cards of identical rank. If the player chooses to split, the wager will be increased by the current wager, after which two new hands will be created, each hand consisting of one of the cards in the starting hand, and one newly drawn card.</span></li>
+        </ul>
+        <h2>Payout</h2>
+        <p>
+            Before each round is started, the player is required to place a wager. The amount of this wager determines the payout at the end of the round, along with the outcome of that round. Five basic scenarios exist:
+        </p>
+        <ul>
+            <li><span>The player loses the round: in this case, the wager is lost, and no amount is paid out.</span></li>
+            <li><span>The round ends in a draw: in this case, the wager is recovered completely, but no additional amount is paid out.</span></li>
+            <li><span>The player wins the round without a Blackjack: in this case, the wager is recovered completely, and an additional amount equal to the wager is paid out.</span></li>
+            <li><span>The player wins the round with a Blackjack: in this case, the wager is recovered completely, and an additional amount equal to 3/2 times the wager is paid out.</span></li>
+            <li><span>The player opts to surrender: in this case, half of the wager is recovered, and no amount is paid out.</span></li>
+        </ul>
+        <p>
+            Three additional scenarios exist, if the player chooses to double as the initial decision:
+        </p>
+        <ul>
+            <li><span>The player opts to double, but loses the round: in this case, the current wager (i.e. double the amount of the initial wager) is lost, and no amount is paid out.</span></li>
+            <li><span>The player opts to double, and the round ends in a draw: in this case, the current wager is recovered completely, but no additional amount is paid out.</span></li>
+            <li><span>The player opts to double, and wins the round: in this case, the current wager is recovered completely, and an additional amount equal to double the initial wager is paid out.</span></li>
+        </ul>
+        <p>
+            Finally, if the player chose to split as the first decision, the payout is done individually for each of the two newly created hands. One important difference exists, which is that a hand that would have counted as a Blackjack normally, does not count as a Blackjack in a split hand. Instead, it is treated as a regular 21-valued hand.
+        </p>
+    </main>
+</body>
+</html>

@@ -1,0 +1,95 @@
+#rootPane {
+    -fx-background-color: seaGreen;
+}
+
+.chip {
+    -fx-effect: dropshadow(gaussian, black, 6, 0.9, 0.5, 0.5);
+}
+
+.plusMinusButton {
+    -fx-background-color: transparent;
+    -fx-effect: dropshadow(gaussian, black, 5, 0.5, 0, 0);
+}
+
+.plusMinusButton:hover {
+    -fx-effect: dropshadow(gaussian, yellow, 3, 0.99, 0, 0);
+}
+
+.plusMinusButton:pressed ImageView {
+    -fx-effect: innershadow(gaussian, black, 6, 0.99, 0, 0);
+}
+
+.decisionButton, #playButton, #startRoundButton, #newGameButton, #quitButton {
+    -fx-background-color: black;
+    -fx-border-color: yellow;
+    -fx-border-width: 2px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.decisionButton:hover, #playButton:hover, #startRoundButton:hover, #newGameButton:hover, #quitButton:hover {
+    -fx-effect: innershadow(gaussian, yellow, 5, 0.95, 0, 0);
+}
+
+.decisionButton:pressed, #playButton:pressed, #startRoundButton:pressed, #newGameButton:pressed, #quitButton:pressed {
+    -fx-background-color: derive(black, 10%);
+}
+
+#infoLabel1, #infoLabel2 {
+    -fx-font-size: 20px;
+    -fx-text-fill: white;
+}
+
+#infoLabel1.playerBlackjackMessage .text, #infoLabel2.playerBlackjackMessage .text {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-fill: gold;
+    -fx-stroke: black;
+    -fx-stroke-width: 2px;
+    -fx-effect: dropshadow(gaussian, gold, 2, 0.1, 0, 0);
+}
+
+#infoLabel1.dealerBlackjackMessage .text, #infoLabel2.dealerBlackjackMessage .text {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-fill: silver;
+    -fx-stroke: black;
+    -fx-stroke-width: 2px;
+    -fx-effect: dropshadow(gaussian, silver, 2, 0.1, 0, 0);
+}
+
+#infoLabel1.splitOutcomeMessage .text, #infoLabel2.splitOutcomeMessage .text {
+    -fx-font-size: 16px;
+}
+
+#infoLabel1.gameOverMessage .text, #infoLabel2.gameOverMessage .text {
+    -fx-font-size: 36px;
+        -fx-font-weight: bold;
+        -fx-fill: red;
+        -fx-stroke: black;
+        -fx-stroke-width: 1px;
+}
+
+#balanceLabel, #wagerLabel {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+#playerLabel, #dealerLabel {
+    -fx-background-color: white;
+    -fx-text-fill: seaGreen;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+#playerGrid, #dealerGrid {
+    -fx-border-color: white;
+    -fx-border-width: 5px;
+}
+
+#runner {
+    -fx-background-color: darkSlateGrey;
+    -fx-border-color: white;
+    -fx-border-width: 5px;
+}

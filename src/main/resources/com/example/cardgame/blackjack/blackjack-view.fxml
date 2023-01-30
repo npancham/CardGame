@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.cardgame.blackjack.BlackjackController"
+            fx:id="rootPane" stylesheets="@blackjack-style.css">
+    <top>
+        <MenuBar>
+            <menus>
+                <Menu text="App">
+                    <items>
+                        <MenuItem onAction="#onExit" text="Exit"/>
+                    </items>
+                </Menu>
+                <Menu text="Game">
+                    <items>
+                        <MenuItem onAction="#onNewGame" text="New Game"/>
+                        <MenuItem onAction="#onQuit" text="Quit"/>
+                    </items>
+                </Menu>
+                <Menu text="Help">
+                    <items>
+                        <MenuItem onAction="#onWhatIsBlackjack" text="What is Blackjack?"/>
+                        <MenuItem onAction="#onCardValues" text="Card Values"/>
+                        <MenuItem onAction="#onGlossary" text="Glossary"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+    <center>
+        <GridPane alignment="CENTER" fx:id="mainGrid" vgap="20">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </padding>
+
+            <columnConstraints>
+                <ColumnConstraints percentWidth="100"/>
+            </columnConstraints>
+
+            <GridPane GridPane.rowIndex="0" maxWidth="Infinity" viewOrder="-1">
+                <rowConstraints>
+                    <RowConstraints percentHeight="90"/>
+                    <RowConstraints percentHeight="10"/>
+                </rowConstraints>
+
+                <GridPane fx:id="dealerGrid" GridPane.rowIndex="0">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="10"/>
+                        <ColumnConstraints percentWidth="10"/>
+                        <ColumnConstraints percentWidth="10"/>
+                        <ColumnConstraints percentWidth="10"/>
+                        <ColumnConstraints percentWidth="10"/>
+                        <ColumnConstraints percentWidth="10"/>
+                        <ColumnConstraints percentWidth="10"/>
+                        <ColumnConstraints percentWidth="10"/>
+                        <ColumnConstraints percentWidth="10"/>
+                        <ColumnConstraints percentWidth="10"/>
+                    </columnConstraints>
+
+                    <rowConstraints>
+                        <RowConstraints percentHeight="100"/>
+                    </rowConstraints>
+                </GridPane>
+
+                <Label fx:id="dealerLabel" maxWidth="Infinity" maxHeight="Infinity" viewOrder="1"
+                       GridPane.rowIndex="1" alignment="CENTER"/>
+            </GridPane>
+
+            <GridPane GridPane.rowIndex="1" fx:id="runner">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="40"/>
+                    <ColumnConstraints percentWidth="20"/>
+                    <ColumnConstraints percentWidth="40"/>
+                </columnConstraints>
+
+                <rowConstraints>
+                    <RowConstraints percentHeight="100"/>
+                </rowConstraints>
+
+                <GridPane GridPane.columnIndex="0" alignment="CENTER">
+                    <rowConstraints>
+                        <RowConstraints percentHeight="16"/>
+                        <RowConstraints percentHeight="67"/>
+                        <RowConstraints percentHeight="16"/>
+                    </rowConstraints>
+
+                    <Label fx:id="balanceLabel" GridPane.rowIndex="0" GridPane.halignment="CENTER"/>
+
+                    <GridPane GridPane.rowIndex="1" alignment="CENTER" hgap="5">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="20"/>
+                            <ColumnConstraints percentWidth="20"/>
+                            <ColumnConstraints percentWidth="20"/>
+                            <ColumnConstraints percentWidth="20"/>
+                            <ColumnConstraints percentWidth="20"/>
+                        </columnConstraints>
+
+                        <StackPane GridPane.columnIndex="0">
+                            <ImageView styleClass="chip" fitHeight="90" preserveRatio="true">
+                                <Image url="@../images/chips/chip1.png"/>
+                            </ImageView>
+
+                            <Button fx:id="minus1Button" onAction="#onPlusMinus" styleClass="plusMinusButton" visible="false"
+                                    translateX="-30" translateY="50">
+                                <graphic>
+                                    <ImageView fitHeight="32" preserveRatio="true">
+                                        <Image url="@../images/minus.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+
+                            <Button fx:id="plus1Button" onAction="#onPlusMinus" styleClass="plusMinusButton" visible="false"
+                                    translateX="30" translateY="50">
+                                <graphic>
+                                    <ImageView fitHeight="32" preserveRatio="true">
+                                        <Image url="@../images/plus.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                        </StackPane>
+
+                        <StackPane GridPane.columnIndex="1">
+                            <ImageView styleClass="chip" fitHeight="90" preserveRatio="true">
+                                <Image url="@../images/chips/chip5.png"/>
+                            </ImageView>
+
+                            <Button fx:id="minus5Button" onAction="#onPlusMinus" styleClass="plusMinusButton" visible="false"
+                                    translateX="-30" translateY="50">
+                                <graphic>
+                                    <ImageView fitHeight="32" preserveRatio="true">
+                                        <Image url="@../images/minus.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+
+                            <Button fx:id="plus5Button" onAction="#onPlusMinus" styleClass="plusMinusButton" visible="false"
+                                    translateX="30" translateY="50">
+                                <graphic>
+                                    <ImageView fitHeight="32" preserveRatio="true">
+                                        <Image url="@../images/plus.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                        </StackPane>
+
+                        <StackPane GridPane.columnIndex="2">
+                            <ImageView styleClass="chip" fitHeight="90" preserveRatio="true">
+                                <Image url="@../images/chips/chip25.png"/>
+                            </ImageView>
+
+                            <Button fx:id="minus25Button" onAction="#onPlusMinus" styleClass="plusMinusButton" visible="false"
+                                    translateX="-30" translateY="50">
+                                <graphic>
+                                    <ImageView fitHeight="32" preserveRatio="true">
+                                        <Image url="@../images/minus.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+
+                            <Button fx:id="plus25Button" onAction="#onPlusMinus" styleClass="plusMinusButton" visible="false"
+                                    translateX="30" translateY="50">
+                                <graphic>
+                                    <ImageView fitHeight="32" preserveRatio="true">
+                                        <Image url="@../images/plus.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                        </StackPane>
+
+                        <StackPane GridPane.columnIndex="3">
+                            <ImageView styleClass="chip" fitHeight="90" preserveRatio="true">
+                                <Image url="@../images/chips/chip100.png"/>
+                            </ImageView>
+
+                            <Button fx:id="minus100Button" onAction="#onPlusMinus" styleClass="plusMinusButton" visible="false"
+                                    translateX="-30" translateY="50">
+                                <graphic>
+                                    <ImageView fitHeight="32" preserveRatio="true">
+                                        <Image url="@../images/minus.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+
+                            <Button fx:id="plus100Button" onAction="#onPlusMinus" styleClass="plusMinusButton" visible="false"
+                                    translateX="30" translateY="50">
+                                <graphic>
+                                    <ImageView fitHeight="32" preserveRatio="true">
+                                        <Image url="@../images/plus.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                        </StackPane>
+
+                        <StackPane GridPane.columnIndex="4">
+                            <ImageView styleClass="chip" fitHeight="90" preserveRatio="true">
+                                <Image url="@../images/chips/chip500.png"/>
+                            </ImageView>
+
+                            <Button fx:id="minus500Button" onAction="#onPlusMinus" styleClass="plusMinusButton" visible="false"
+                                    translateX="-30" translateY="50">
+                                <graphic>
+                                    <ImageView fitHeight="32" preserveRatio="true">
+                                        <Image url="@../images/minus.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+
+                            <Button fx:id="plus500Button" onAction="#onPlusMinus" styleClass="plusMinusButton" visible="false"
+                                    translateX="30" translateY="50">
+                                <graphic>
+                                    <ImageView fitHeight="32" preserveRatio="true">
+                                        <Image url="@../images/plus.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                        </StackPane>
+                    </GridPane>
+
+                    <Label fx:id="wagerLabel" GridPane.rowIndex="2" GridPane.halignment="CENTER"/>
+                </GridPane>
+
+                <GridPane GridPane.columnIndex="1" alignment="CENTER">
+                    <rowConstraints>
+                        <RowConstraints percentHeight="33"/>
+                        <RowConstraints percentHeight="33"/>
+                        <RowConstraints percentHeight="33"/>
+                    </rowConstraints>
+
+                    <Label fx:id="infoLabel1"
+                           GridPane.rowIndex="0" GridPane.halignment="CENTER" textAlignment="CENTER"/>
+
+                    <Button fx:id="playButton" onAction="#onPlay" maxWidth="Infinity"
+                            GridPane.rowIndex="1" GridPane.halignment="CENTER">
+                        Play
+                    </Button>
+
+                    <Button fx:id="startRoundButton" onAction="#onStartRound" maxWidth="Infinity" visible="false"
+                            GridPane.rowIndex="1" GridPane.halignment="CENTER">
+                        Start
+                    </Button>
+
+                    <GridPane GridPane.rowIndex="1" alignment="CENTER" hgap="5" viewOrder="1">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="50"/>
+                            <ColumnConstraints percentWidth="50"/>
+                        </columnConstraints>
+
+                        <Button fx:id="newGameButton" onAction="#onNewGame" maxWidth="Infinity" visible="false"
+                                GridPane.columnIndex="0">
+                            New Game
+                        </Button>
+                        <Button fx:id="quitButton" onAction="#onQuit" maxWidth="Infinity" visible="false"
+                                GridPane.columnIndex="1">
+                            Quit
+                        </Button>
+                    </GridPane>
+
+                    <Label fx:id="infoLabel2"
+                           GridPane.rowIndex="2" GridPane.halignment="CENTER" textAlignment="CENTER"/>
+
+                    <GridPane GridPane.rowIndex="2" hgap="5">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="16"/>
+                            <ColumnConstraints percentWidth="16"/>
+                            <ColumnConstraints percentWidth="16"/>
+                            <ColumnConstraints percentWidth="16"/>
+                            <ColumnConstraints percentWidth="16"/>
+                            <ColumnConstraints percentWidth="16"/>
+                        </columnConstraints>
+
+                        <rowConstraints>
+                            <RowConstraints percentHeight="50"/>
+                            <RowConstraints percentHeight="50"/>
+                        </rowConstraints>
+
+                        <Button fx:id="standButton" onAction="#onStand" maxWidth="Infinity" visible="false" styleClass="decisionButton"
+                                GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="3">
+                            Stand
+                            <tooltip>
+                                <Tooltip showDelay="3s" showDuration="7s"
+                                         text="Draw no more cards, let the dealer resolve its hand and compare your hand against the dealer's."/>
+                            </tooltip>
+                        </Button>
+                        <Button fx:id="hitButton" onAction="#onHit" maxWidth="Infinity" visible="false" styleClass="decisionButton"
+                                GridPane.columnIndex="3" GridPane.rowIndex="0" GridPane.columnSpan="3">
+                            Hit
+                            <tooltip>
+                                <Tooltip showDelay="3s" showDuration="3s"
+                                         text="Draw another card."/>
+                            </tooltip>
+                        </Button>
+                        <Button fx:id="doubleButton" onAction="#onDouble" maxWidth="Infinity" visible="false" styleClass="decisionButton"
+                                GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2">
+                            Double
+                            <tooltip>
+                                <Tooltip showDelay="3s" showDuration="10s"
+                                         text="Double your wager, draw exactly one more card, let the dealer resolve its hand, and compare your hand against the dealer's."/>
+                            </tooltip>
+                        </Button>
+                        <Button fx:id="splitButton" onAction="#onSplit" maxWidth="Infinity" visible="false" styleClass="decisionButton"
+                                GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.columnSpan="2">
+                            Split
+                            <tooltip>
+                                <Tooltip showDelay="3s" showDuration="10s"
+                                         text="By placing an additional wager, create two new starting hands, each consisting of one card in your current hand and one newly drawn card."/>
+                            </tooltip>
+                        </Button>
+                        <Button fx:id="surrenderButton" onAction="#onSurrender" maxWidth="Infinity" visible="false" styleClass="decisionButton"
+                                GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.columnSpan="2">
+                            Surrender
+                            <tooltip>
+                                <Tooltip showDelay="3s" showDuration="7s"
+                                         text="Recover half your wager by ending this round without play."/>
+                            </tooltip>
+                        </Button>
+                    </GridPane>
+                </GridPane>
+
+                <ImageView fitHeight="125" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                    <Image url="@../images/cardSuits.png"/>
+                </ImageView>
+            </GridPane>
+
+            <GridPane GridPane.rowIndex="2" maxWidth="Infinity" viewOrder="-1">
+                <rowConstraints>
+                    <RowConstraints percentHeight="10"/>
+                    <RowConstraints percentHeight="90"/>
+                </rowConstraints>
+
+                <Label fx:id="playerLabel" maxWidth="Infinity" maxHeight="Infinity" viewOrder="1"
+                       GridPane.rowIndex="0" alignment="CENTER"/>
+
+                <GridPane fx:id="playerGrid" GridPane.rowIndex="1">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="10"/>
+                        <ColumnConstraints percentWidth="10"/>
+                        <ColumnConstraints percentWidth="10"/>
+                        <ColumnConstraints percentWidth="10"/>
+                        <ColumnConstraints percentWidth="10"/>
+                        <ColumnConstraints percentWidth="10"/>
+                        <ColumnConstraints percentWidth="10"/>
+                        <ColumnConstraints percentWidth="10"/>
+                        <ColumnConstraints percentWidth="10"/>
+                        <ColumnConstraints percentWidth="10"/>
+                    </columnConstraints>
+
+                    <rowConstraints>
+                        <RowConstraints percentHeight="100"/>
+                    </rowConstraints>
+                </GridPane>
+            </GridPane>
+        </GridPane>
+    </center>
+</BorderPane>
+
+

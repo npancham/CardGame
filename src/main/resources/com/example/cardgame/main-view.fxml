@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.SplitPane?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.cardgame.MainController" fx:id="rootLayout" stylesheets="@main-style.css">
+    <top>
+        <MenuBar>
+            <menus>
+                <Menu text="App">
+                    <items>
+                        <MenuItem onAction="#onExit" text="Exit"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+    <center>
+        <StackPane fx:id="stackPane">
+            <ImageView fx:id="iv2" fitHeight="332" preserveRatio="true"/>
+
+            <ImageView fx:id="iv4" fitHeight="332" preserveRatio="true"/>
+
+            <ImageView fx:id="iv3" fitHeight="332" preserveRatio="true"/>
+
+            <ImageView fx:id="iv1" fitHeight="332" preserveRatio="true"/>
+
+            <BorderPane styleClass="mainMenu" maxWidth="375" maxHeight="600">
+                <top>
+                    <Label fx:id="infoLabel" prefWidth="Infinity">
+                        <padding>
+                            <Insets top="25.0" left="25.0"/>
+                        </padding>
+                    </Label>
+                </top>
+
+                <center>
+                    <VBox alignment="CENTER" spacing="20.0">
+                        <padding>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+                        </padding>
+
+                        <Button text="Blackjack" onAction="#onBlackjackButtonClick" prefWidth="Infinity"/>
+
+                        <SplitPane styleClass="wrapper">
+                            <tooltip>
+                                <Tooltip text="Coming soon!" showDelay="1s"/>
+                            </tooltip>
+                            <Button text="Poker" prefWidth="Infinity" disable="true"/>
+                        </SplitPane>
+
+                        <SplitPane styleClass="wrapper">
+                            <tooltip>
+                                <Tooltip text="Coming soon!" showDelay="1s"/>
+                            </tooltip>
+                            <Button text="Solitaire" prefWidth="Infinity" disable="true"/>
+                        </SplitPane>
+                    </VBox>
+                </center>
+
+                <bottom>
+                    <Label fx:id="infoLabelMirrored" prefWidth="Infinity" rotate="180">
+                        <padding>
+                            <Insets top="25.0" left="25.0"/>
+                        </padding>
+                    </Label>
+                </bottom>
+            </BorderPane>
+        </StackPane>
+    </center>
+</BorderPane>

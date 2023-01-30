@@ -1,0 +1,61 @@
+body {
+    font-family: Georgia;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+main {
+    margin-top: 72px;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+
+table {
+    width: 100%;
+}
+
+table tr:nth-child(even) {
+    background-color: #ffcccc;
+}
+
+table tr:nth-child(odd) {
+    background-color: #cccccc;
+}
+
+table tr th {
+    background-color: #4c4c4c;
+    color: #ffffff;
+}
+
+table tr td:nth-child(1) {
+    font-weight: bold;
+}
+
+table tr th, table tr td {
+    text-align: left;
+    padding: 10px;
+}
+
+ul li:nth-child(even) {
+    color: red;
+}
+
+ul li span {
+    color: black;
+}
+
+figcaption {
+    font-size: 0.8em;
+}
+
+.cardImage {
+    width: 104px;
+    height: 166px;
+}
